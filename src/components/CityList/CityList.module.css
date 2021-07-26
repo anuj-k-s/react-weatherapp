@@ -1,0 +1,26 @@
+.city_list {
+  width: 30rem;
+  max-width: 80%;
+  margin: auto;
+}
+
+.city_list h2 {
+  border-bottom: 3px solid #ccc;
+  padding-bottom: 1rem;
+}
+
+.city_list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.city_list li{
+    padding: 0.5rem;
+    margin: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 1px 5px rgb(0 0 0 / 26%);
+}
+
+

@@ -24,8 +24,20 @@
     border-bottom-color: #ff2058;
   }
   
-  .city_form__actions {
+  .cityform__actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+
+  button {
+    font: inherit;
+    background: #ff2058;
+    padding: 0.5rem 2rem;
+    color: white;
+    border: 1px solid #ff2058;
+    margin: 0.5rem 0;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

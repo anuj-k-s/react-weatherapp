@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import Card from "../UI/Card/Card";
 import styles from "./CityForm.module.css";
-const CityForm = () => {
-  const [currentCityState, updateCurrentCityState] = useState({ cityName: "Jaipur", cityTemp: "45C" });
+const CityForm = (props) => {
+  const [currentCityState, updateCurrentCityState] = useState({ cityName: "Jaipur", cityTemp: 45 });
+  const submitHandler = event => {
+      event.preventDefault();
+        props.onAddCity(currentCityState);
+  }
+  console.log("CityForm rendered")
   return (
     <section className={styles.cityform}>
       <Card>
-        <form>
+        <form onSubmit={submitHandler}>
           <div className={styles.form_control}>
             <label htmlFor="city">City</label>
             <input
@@ -29,7 +34,7 @@ const CityForm = () => {
               }
             />
           </div>
-          <div className="city-form__actions">
+          <div className={styles.cityform__actions}>
             <button type="submit">Add City</button>
           </div>
         </form>
