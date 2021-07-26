@@ -9,7 +9,7 @@ const CityList = (props) => {
       <ul>
         {props.cities.map((city) => {
           return (
-              <li key={city.id}>
+              <li key={city.id} onClick={props.onRemoveItem.bind(this,city.id)}>
                 <span>{city.cityName}</span>
                 <span>{city.cityTemp}</span>
               </li>

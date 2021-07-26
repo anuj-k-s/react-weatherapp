@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import Card from "../UI/Card/Card";
 import styles from "./CityForm.module.css";
 const CityForm = (props) => {
-  const [currentCityState, updateCurrentCityState] = useState({ cityName: "Jaipur", cityTemp: 45 });
+  const [cityName, updateCityName] = useState("");
+  const [cityTemp, updateCityTemp] = useState("");
   const submitHandler = event => {
       event.preventDefault();
-        props.onAddCity(currentCityState);
+        props.onAddCity({cityName,cityTemp});
   }
   console.log("CityForm rendered")
   return (
@@ -17,9 +18,9 @@ const CityForm = (props) => {
             <input
               type="text"
               id="city"
-              value={currentCityState.cityName}
+              value={cityName.cityName}
               onChange={(event) =>
-                updateCurrentCityState({ cityName: event.target.value, cityTemp: currentCityState.cityTemp })
+                updateCityName(event.target.value)
               }
             />
           </div>
@@ -28,9 +29,9 @@ const CityForm = (props) => {
             <input
               type="number"
               id="temp"
-              value={currentCityState.cityTemp}
+              value={cityName.cityTemp}
               onChange={(event) =>
-                updateCurrentCityState({ cityName: currentCityState.cityName, cityTemp: event.target.value })
+                updateCityTemp(event.target.value)
               }
             />
           </div>
