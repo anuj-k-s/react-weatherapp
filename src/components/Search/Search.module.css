@@ -1,0 +1,28 @@
+.search {
+   width: 30rem;
+   margin: 2rem auto;
+   max-width: 80%;
+}
+
+.search_bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.search_bar input {
+    border-radius: 5px;
+    border: 2px solid #ccc;
+}
+
+.search_bar input:focus {
+    outline: none;
+    border-color:  #ff2058;
+  }
+
+@media (min-width: 582px) {
+    .search_bar {
+        flex-direction: row;
+    }
+}
