@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import Card from "../UI/Card/Card";
 import styles from "./CityForm.module.css";
+import LoadingIndicator from "../UI/LoadingSpinner/LoadingSpinner";
+
+
 const CityForm = (props) => {
   const [cityName, updateCityName] = useState("");
   const [cityTemp, updateCityTemp] = useState("");
@@ -9,6 +12,7 @@ const CityForm = (props) => {
         props.onAddCity({cityName,cityTemp});
   }
   console.log("CityForm rendered")
+  console.log(props.loading)
   return (
     <section className={styles.cityform}>
       <Card>
@@ -37,6 +41,8 @@ const CityForm = (props) => {
           </div>
           <div className={styles.cityform__actions}>
             <button type="submit">Add City</button>
+            {props.loading && <LoadingIndicator/>}
+            {props.loading}
           </div>
         </form>
       </Card>
